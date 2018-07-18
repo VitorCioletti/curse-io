@@ -15,9 +15,7 @@
         {
             lock (_object)
             {
-                var lista = List.English.Split(',');
-
-                foreach (var word in lista)
+                foreach (var word in List.English.Split('\n'))
                     text = text.Replace(word, new string('*', word.Count()));
 
                 return text;

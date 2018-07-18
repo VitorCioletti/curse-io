@@ -61,18 +61,18 @@ namespace Curse_io.WordList {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 4r5e,
-        ///5h1t,
-        ///5hit,
-        ///shit,
-        ///sh1t,
-        ///a55,
-        ///anal,
-        ///anus,
-        ///ar5e,
-        ///arrse,
-        ///arse,
-        ///ass,
+        ///   Looks up a localized string similar to 4r5e
+        ///5h1t
+        ///5hit
+        ///shit
+        ///sh1t
+        ///a55
+        ///anal
+        ///anus
+        ///ar5e
+        ///arrse
+        ///arse
+        ///ass
         ///ass-fucker
         ///asses
         ///assfucker
@@ -127,7 +127,10 @@ namespace Curse_io.WordList {
         ///buttplug
         ///c0ck
         ///c0cksucker
-        ///carpet muncher [rest of string was truncated]&quot;;.
+        ///carpet muncher
+        ///cawk
+        ///chink
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string English {
             get {
