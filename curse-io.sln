@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Curse-io", "curse-io\Curse-io.csproj", "{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{56A42712-98B5-4C42-8F8B-58D571403411}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A42712-98B5-4C42-8F8B-58D571403411}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A42712-98B5-4C42-8F8B-58D571403411}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A42712-98B5-4C42-8F8B-58D571403411}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A42712-98B5-4C42-8F8B-58D571403411}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
