@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\curse-io\CurseIO.csproj">
+    <ProjectReference Include="..\CurseIO\CurseIO.csproj">
       <Project>{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}</Project>
       <Name>CurseIO</Name>
     </ProjectReference>

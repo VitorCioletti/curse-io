@@ -3,9 +3,9 @@
     using Enum;
     using System.Collections.Generic;
 
-    public static class Words
+    internal static class Words
     {
-        public static IEnumerable<string> Get(Language languages) => FilterLanguages(languages);
+        internal static IEnumerable<string> Get(Language languages) => FilterLanguages(languages);
 
         private static IEnumerable<string> FilterLanguages(Language languages)
         {
