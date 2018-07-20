@@ -7,8 +7,8 @@
     <ProjectGuid>{136CBCAA-8BCC-4C81-9439-D37AC5B34EAE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Curse_io</RootNamespace>
-    <AssemblyName>Curse-io</AssemblyName>
+    <RootNamespace>CurseIO</RootNamespace>
+    <AssemblyName>CurseIO</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,21 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Curse.cs" />
-    <Compile Include="Enum\Languages.cs" />
+    <Compile Include="Data\Words.cs" />
+    <Compile Include="Enum\Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WordList\List.Designer.cs">
+    <Compile Include="Data\WordList.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>List.resx</DependentUpon>
+      <DependentUpon>WordList.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="WordList\Texts\English.txt" />
+    <Content Include="Data\Texts\English.txt" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WordList\List.resx">
+    <EmbeddedResource Include="Data\WordList.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>List.Designer.cs</LastGenOutput>
+      <LastGenOutput>WordList.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

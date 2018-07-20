@@ -1,30 +1,41 @@
-﻿namespace Curse_io
+﻿namespace CurseIO
 {
+    using Data;
     using Enum;
     using System.Collections.Generic;
     using System.Linq;
-    using WordList;
+    using System.Text.RegularExpressions;
 
     public static class Curse
     {
-        private static object _object = new object();
+        private static Language _languages = Language.English;
 
-        private static Languages _languages = Languages.English;
+        private static int _curseRemoved;
 
-        public static string Clean(string text)
+        private static char _curseChar = '*';
+
+        public static string Clear(string text)
         {
-            lock (_object)
-            {
-                foreach (var word in List.English.Split('\n'))
-                    text = text.Replace(word, new string('*', word.Count()));
+            Words.Get(_languages)
+                 .Select(curseWord => text = text.ReplaceCursed(curseWord))
+                 .ToList();
 
-                return text;
-            }
+            return text;
         }
 
-        public static Languages[] SetLanguage(params Languages[] languages)
+        public static string Clear(string text, out int curseCounter)
         {
-            languages.Select(lang => _languages = lang | _languages);
+            var cleanedText = Clear(text);
+            curseCounter = _curseRemoved;
+
+            _curseRemoved = 0;
+
+            return cleanedText;
+        }
+
+        public static Language[] SetLanguage(params Language[] languages)
+        {
+            languages.Select(lang => _languages = lang | _languages).ToList();
 
             return languages;
         }
@@ -47,6 +58,13 @@
         public static string RemoveWord(string wordToRemove)
         {
             return wordToRemove;
+        }
+
+        private static string ReplaceCursed(this string text, string curseWord)
+        {
+            _curseRemoved += Regex.Matches(text, curseWord).Count;
+
+            return text.Replace(curseWord, new string(_curseChar, curseWord.Count()));
         }
     }
 }

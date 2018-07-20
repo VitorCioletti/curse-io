@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Curse_io.WordList {
+namespace CurseIO.Data {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Curse_io.WordList {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class List {
+    internal class WordList {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal List() {
+        internal WordList() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Curse_io.WordList {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Curse_io.WordList.List", typeof(List).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CurseIO.Data.WordList", typeof(WordList).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
