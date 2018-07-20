@@ -62,9 +62,11 @@
 
         private static string ReplaceCursed(this string text, string curseWord)
         {
-            _curseRemoved += Regex.Matches(text, curseWord).Count;
+            var patternToMatch = $@"\b{curseWord}\b";
 
-            return text.Replace(curseWord, new string(_curseChar, curseWord.Count()));
+            _curseRemoved += Regex.Matches(text, patternToMatch).Count;
+
+            return Regex.Replace(text, patternToMatch, new string(_curseChar, curseWord.Count()), RegexOptions.IgnoreCase);
         }
     }
 }
