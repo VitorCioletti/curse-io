@@ -5,20 +5,26 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
 
     public static class Curse
     {
-        private static Language _languages = Language.English;
+        private static Language _language = Language.English;
+
+        private static List<string> _curseWords;
 
         private static int _curseRemoved;
 
         private static char _curseChar = '*';
 
+        static Curse()
+        {
+            SetCurseWords();
+        }
+
         public static string Clear(string text)
         {
-            Words.Get(_languages)
-                 .Select(curseWord => text = text.ReplaceCursed(curseWord))
-                 .ToList();
+            _curseWords.ForEach(curseWord => text = text.ReplaceCurse(curseWord));
 
             return text;
         }
@@ -33,34 +39,44 @@
             return cleanedText;
         }
 
-        public static Language[] SetLanguage(params Language[] languages)
-        {
-            languages.Select(lang => _languages = lang | _languages).ToList();
+        public static Task<string> ClearAsync(string text) => Task.Run(() => Clear(text));
 
-            return languages;
+        public static Language SetLanguage(Language language)
+        {
+            _language = language;
+
+            SetCurseWords();
+
+            return language;
         }
 
-        public static IEnumerable<string> AddNewWords(IEnumerable<string> newWords)
-        {
-            return newWords;
-        }
-
+        public static IEnumerable<string> AddNewWords(IEnumerable<string> newWords) => 
+            newWords.Select(word => AddNewWord(word)).ToList();
+        
         public static string AddNewWord(string newWord)
         {
+            _curseWords.Add(newWord);
+
             return newWord;
         }
 
         public static IEnumerable<string> RemoveWords(IEnumerable<string> wordsToRemove)
         {
+            wordsToRemove.ToList().ForEach(word => RemoveWord(word));
+
             return wordsToRemove;
         }
 
         public static string RemoveWord(string wordToRemove)
         {
+            _curseWords.Remove(wordToRemove);
+
             return wordToRemove;
         }
 
-        private static string ReplaceCursed(this string text, string curseWord)
+        private static void SetCurseWords() => _curseWords = Words.Get(_language).ToList();
+
+        private static string ReplaceCurse(this string text, string curseWord)
         {
             var patternToMatch = $@"\b{curseWord}\b";
 

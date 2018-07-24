@@ -5,13 +5,16 @@
 
     internal static class Words
     {
-        internal static IEnumerable<string> Get(Language languages) => FilterLanguages(languages);
+        internal static IEnumerable<string> Get(Language languages) => FilterWordsByLanguage(languages);
 
-        private static IEnumerable<string> FilterLanguages(Language languages)
+        private static IEnumerable<string> FilterWordsByLanguage(Language languages)
         {
             var cursedWords = new List<string>();
 
-            if (languages.HasFlag(Language.English))
+            if (languages.Equals(Language.English))
+                cursedWords.AddRange(WordList.English.SplitBySpace());
+
+            if(languages.Equals(Language.PortugueseBR))
                 cursedWords.AddRange(WordList.English.SplitBySpace());
 
             return cursedWords;
