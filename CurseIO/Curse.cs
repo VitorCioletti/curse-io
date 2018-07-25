@@ -7,30 +7,30 @@
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
 
-    public static class Curse
+    public class Curse
     {
-        private static Language _language = Language.English;
+        public Language Language = Language.English;
 
-        private static List<string> _curseWords;
+        private List<string> _curseWords;
 
-        private static Dictionary<string, int> _curseRemoved;
+        private Dictionary<string, int> _curseRemoved;
 
-        private static char _curseChar = '*';
+        private char _curseChar = '*';
 
-        static Curse()
+        public Curse()
         {
             SetCurseWords();
             _curseRemoved = new Dictionary<string, int>();
         }
 
-        public static string Clear(string text)
+        public string Clear(string text)
         {
-            _curseWords.ForEach(curseWord => text = text.ReplaceCurse(curseWord));
+            _curseWords.ForEach(curseWord => text = ReplaceCurse(text, curseWord));
 
             return text;
         }
 
-        public static string Clear(string text, out IDictionary<string, int> curseCleanedList)
+        public string Clear(string text, out IDictionary<string, int> curseCleanedList)
         {
             _curseRemoved.Clear();
 
@@ -40,46 +40,46 @@
             return cleanedText;
         }
 
-        public static Task<string> ClearAsync(string text) => Task.Run(() => Clear(text));
+        public Task<string> ClearAsync(string text) => Task.Run(() => Clear(text));
 
-        public static Language SetLanguage(Language language)
+        public Language SetLanguage(Language language)
         {
-            _language = language;
+            Language = language;
 
             SetCurseWords();
 
             return language;
         }
 
-        public static IEnumerable<string> GetCurrentDictionary() => _curseWords;
+        public IEnumerable<string> GetCurrentDictionary() => _curseWords;
 
-        public static IEnumerable<string> AddNewWords(IEnumerable<string> newWords) => 
+        public IEnumerable<string> AddNewWords(IEnumerable<string> newWords) => 
             newWords.Select(word => AddNewWord(word)).ToList();
         
-        public static string AddNewWord(string newWord)
+        public string AddNewWord(string newWord)
         {
             _curseWords.Add(newWord);
 
             return newWord;
         }
 
-        public static IEnumerable<string> RemoveWords(IEnumerable<string> wordsToRemove)
+        public IEnumerable<string> RemoveWords(IEnumerable<string> wordsToRemove)
         {
             wordsToRemove.ToList().ForEach(word => RemoveWord(word));
 
             return wordsToRemove;
         }
 
-        public static string RemoveWord(string wordToRemove)
+        public string RemoveWord(string wordToRemove)
         {
             _curseWords.Remove(wordToRemove);
 
             return wordToRemove;
         }
 
-        private static void SetCurseWords() => _curseWords = Words.Get(_language).ToList();
+        private void SetCurseWords() => _curseWords = Words.Get(Language).ToList();
 
-        private static string ReplaceCurse(this string text, string curseWord)
+        private string ReplaceCurse(string text, string curseWord)
         {
             var patternToMatch = $@"\b{curseWord}\b";
             var curseCounter = Regex.Matches(text, patternToMatch).Count;

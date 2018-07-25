@@ -1,7 +1,6 @@
 ﻿namespace Tests
 {
     using CurseIO;
-    using CurseIO.Enum;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,9 +14,10 @@
             // Arrange
             var textToBeCleaned = "The quick brown fox jumps over the fuck dog";
             var resultedText = "The quick brown fox jumps over the **** dog";
+            var curse = new Curse();
 
             // Act
-            var cleaned = Curse.Clear(textToBeCleaned);
+            var cleaned = curse.Clear(textToBeCleaned);
 
             // Assert
             Assert.AreEqual(resultedText, cleaned);
@@ -27,11 +27,13 @@
         public void ShouldCountCleanedWords()
         {
             // Arrange
+            var curse = new Curse();
+
             var textToBeCleaned = "The fuck brown fox jumps over the fuck dog";
             IDictionary<string, int> cleanedWords;
 
             // Act
-            Curse.Clear(textToBeCleaned, out cleanedWords);
+            curse.Clear(textToBeCleaned, out cleanedWords);
 
             // Assert
             Assert.AreEqual(2, cleanedWords["fuck"]);
@@ -42,12 +44,13 @@
         {
             // Arrange
             var word = "OkieDokie";
+            var curse = new Curse();
 
             // Act
-            Curse.AddNewWord(word);
+            curse.AddNewWord(word);
 
             // Assert
-            Assert.IsTrue(Curse.GetCurrentDictionary().ToList().Contains(word));
+            Assert.IsTrue(curse.GetCurrentDictionary().ToList().Contains(word));
         }
 
         [TestMethod]
@@ -55,12 +58,13 @@
         {
             // Arrange
             var word = "shit";
-            
+            var curse = new Curse();
+
             // Act
-            Curse.RemoveWord(word);
+            curse.RemoveWord(word);
 
             // Assert
-            Assert.IsFalse(Curse.GetCurrentDictionary().Contains(word));
+            Assert.IsFalse(curse.GetCurrentDictionary().Contains(word));
         }
     }
 }
