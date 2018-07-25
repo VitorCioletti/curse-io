@@ -13,13 +13,14 @@
 
         private static List<string> _curseWords;
 
-        private static int _curseRemoved;
+        private static Dictionary<string, int> _curseRemoved;
 
         private static char _curseChar = '*';
 
         static Curse()
         {
             SetCurseWords();
+            _curseRemoved = new Dictionary<string, int>();
         }
 
         public static string Clear(string text)
@@ -29,12 +30,12 @@
             return text;
         }
 
-        public static string Clear(string text, out int curseCounter)
+        public static string Clear(string text, out IDictionary<string, int> curseCleanedList)
         {
-            var cleanedText = Clear(text);
-            curseCounter = _curseRemoved;
+            _curseRemoved.Clear();
 
-            _curseRemoved = 0;
+            var cleanedText = Clear(text);
+            curseCleanedList = new Dictionary<string, int>(_curseRemoved);
 
             return cleanedText;
         }
@@ -49,6 +50,8 @@
 
             return language;
         }
+
+        public static IEnumerable<string> GetCurrentDictionary() => _curseWords;
 
         public static IEnumerable<string> AddNewWords(IEnumerable<string> newWords) => 
             newWords.Select(word => AddNewWord(word)).ToList();
@@ -79,8 +82,10 @@
         private static string ReplaceCurse(this string text, string curseWord)
         {
             var patternToMatch = $@"\b{curseWord}\b";
+            var curseCounter = Regex.Matches(text, patternToMatch).Count;
 
-            _curseRemoved += Regex.Matches(text, patternToMatch).Count;
+            if (curseCounter >= 1)
+                _curseRemoved.Add(curseWord, curseCounter);
 
             return Regex.Replace(text, patternToMatch, new string(_curseChar, curseWord.Count()), RegexOptions.IgnoreCase);
         }
