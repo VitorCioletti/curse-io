@@ -105,6 +105,7 @@ curse.RemoveWord("idiot");
 - Portuguese (BR)
 
 <p align="center">
+    <p>Creative Commons 4.0 International</p>
     <a href="http://creativecommons.org/licenses/by/4.0/">
         <img alt="logo" src="http://i.creativecommons.org/l/by/4.0/80x15.png">
     </a>
