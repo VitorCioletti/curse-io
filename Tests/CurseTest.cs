@@ -66,5 +66,17 @@
             // Assert
             Assert.IsFalse(curse.GetCurrentDictionary().Contains(word));
         }
+
+        public void PortugueseDictionaryWithNoEmptyLines()
+        {
+            // Arrange
+            var curse = new Curse();
+
+            // Act
+            curse.GetCurrentDictionary().s
+
+            // Assert
+
+        }
     }
 }
