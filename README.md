@@ -1,3 +1,9 @@
+<p align="center" >
+    <a>
+        <img alt="logo" src="Logo/logo.jpg" style="width:250px;">
+    </a>
+</p>
+
 # Curse-IO
 
 [![][build-img]][build]
@@ -9,6 +15,14 @@ Package to cleanse strings from curse words
 [build-img]: https://ci.appveyor.com/api/projects/status/github/fluentscheduler/fluentscheduler?svg=true
 [nuget]:     https://www.nuget.org/packages/FluentScheduler
 [nuget-img]: https://badge.fury.io/nu/fluentscheduler.svg
+
+* [Basic usage](#basic-usage)
+* [Setting a language dictionary](#setting-a-language-dictionary)
+* [Get all cleansed bad words](#get-all-cleansed-bad-words)
+* [Asynchronous cleaning](#asynchronous-cleaning)
+* [Adding words to current dictionary](#adding-words-to-current-dictionary)
+* [Removing words from current dictionary](#removing-words-to-current-dictionary)
+* [Supported languages](#supported-languages)
 
 
 
@@ -33,7 +47,7 @@ curse.SetLanguage(Language.English);
 
 ```
 
-## Get bad words cleaned in the string
+## Get all cleansed bad words
 `Clean` returns a dictionary where key is the bad word and the value is the amount of times it appeared in the given string.
 
 ```cs
@@ -100,7 +114,7 @@ var curse = new Curse();
 curse.RemoveWord("idiot");
 ```
 
-## Languages supported
+## Supported languages
 - English
 - Portuguese (BR)
 
