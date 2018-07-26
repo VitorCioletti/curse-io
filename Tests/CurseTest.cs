@@ -1,6 +1,7 @@
 ﻿namespace Tests
 {
     using CurseIO;
+    using CurseIO.Enum;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.Linq;
@@ -22,6 +23,20 @@
             // Assert
             Assert.AreEqual(resultedText, cleaned);
         }
+        [TestMethod]
+        public void ShouldNotClearTextFromCursed()
+        {
+            // Arrange
+            var textToBeCleaned = "The quick brown fox jumps over thefuck dog";
+            var curse = new Curse();
+
+            // Act
+            var cleaned = curse.Clear(textToBeCleaned);
+
+            // Assert
+            Assert.AreEqual(textToBeCleaned, cleaned);
+        }
+
 
         [TestMethod]
         public void ShouldCountCleanedWords()
@@ -67,16 +82,34 @@
             Assert.IsFalse(curse.GetCurrentDictionary().Contains(word));
         }
 
+        [TestMethod]
         public void PortugueseDictionaryWithNoEmptyLines()
         {
             // Arrange
             var curse = new Curse();
 
+            curse.SetLanguage(Language.PortugueseBR);
+
             // Act
-            curse.GetCurrentDictionary().s
+            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
 
             // Assert
+            Assert.IsFalse(hasEmpty);
+        }
 
+        [TestMethod]
+        public void EnglishDictionaryWithNoEmptyLines()
+        {
+            // Arrange
+            var curse = new Curse();
+
+            curse.SetLanguage(Language.English);
+
+            // Act
+            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
+
+            // Assert
+            Assert.IsFalse(hasEmpty);
         }
     }
 }
