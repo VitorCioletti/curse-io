@@ -5,8 +5,8 @@
 
 Package to cleanse strings from curse words
 
-[build]:     https://ci.appveyor.com/project/TallesL/fluentscheduler
-[build-img]: https://ci.appveyor.com/api/projects/status/github/fluentscheduler/fluentscheduler?svg=true
+[build]:     https://ci.appveyor.com/project/VitorCioletti/curse-io
+[build-img]: https://ci.appveyor.com/api/projects/status/nv34gc8sm0ds2cxj?svg=true
 [nuget]:     https://www.nuget.org/packages/FluentScheduler
 [nuget-img]: https://badge.fury.io/nu/fluentscheduler.svg
 
