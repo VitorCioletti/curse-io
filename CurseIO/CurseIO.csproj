@@ -52,6 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Texts\English.txt" />
+    <Content Include="Data\Texts\French.txt" />
+    <Content Include="Data\Texts\German.txt" />
+    <Content Include="Data\Texts\Italian.txt" />
+    <Content Include="Data\Texts\Spanish.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Data\WordList.resx">

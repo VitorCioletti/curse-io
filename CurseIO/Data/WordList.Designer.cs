@@ -121,16 +121,7 @@ namespace CurseIO.Data {
         ///butt
         ///butthole
         ///buttmuch
-        ///buttplug
-        ///c0ck
-        ///c0cksucker
-        ///carpet muncher
-        ///cawk
-        ///chink
-        ///cipa
-        ///cl1t
-        ///clit
-        ///cli [rest of string was truncated]&quot;;.
+        ///buttplug        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string English {
             get {
@@ -259,13 +250,7 @@ namespace CurseIO.Data {
         ///schiesser
         ///schnackeln
         ///schwanzlutscher
-        ///schwuchtel
-        ///tittchen
-        ///titten
-        ///vögeln
-        ///vollpfosten
-        ///wichse
-        ///wichse [rest of string was truncated]&quot;;.
+        ///sc [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string German {
             get {
@@ -325,13 +310,7 @@ namespace CurseIO.Data {
         ///coglioni
         ///cornuto
         ///cozza
-        ///culattina
-        ///culattone
-        ///culo
-        ///di merda
-        ///ditalino
-        ///duro
-        ///fare u [rest of string was truncated]&quot;;.
+        ///cul [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Italian {
             get {
