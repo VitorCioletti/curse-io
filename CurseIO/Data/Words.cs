@@ -26,7 +26,7 @@
                     cursedWords.AddRange(WordList.French.SplitBySpace());
                     break;
                 case Language.German:
-                    cursedWords.AddRange(WordList.French.SplitBySpace());
+                    cursedWords.AddRange(WordList.German.SplitBySpace());
                     break;
                 default:
                     break;
