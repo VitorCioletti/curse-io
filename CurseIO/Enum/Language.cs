@@ -4,6 +4,12 @@
     {
         English,
 
-        PortugueseBR
+        Italian,
+
+        Spanish,
+
+        French,
+        
+        German
     }
 }

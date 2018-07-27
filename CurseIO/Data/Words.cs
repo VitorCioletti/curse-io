@@ -7,15 +7,30 @@
     {
         internal static IEnumerable<string> Get(Language languages) => FilterWordsByLanguage(languages);
 
-        private static IEnumerable<string> FilterWordsByLanguage(Language languages)
+        private static IEnumerable<string> FilterWordsByLanguage(Language language)
         {
             var cursedWords = new List<string>();
 
-            if (languages.Equals(Language.English))
-                cursedWords.AddRange(WordList.English.SplitBySpace());
-
-            if(languages.Equals(Language.PortugueseBR))
-                cursedWords.AddRange(WordList.English.SplitBySpace());
+            switch (language)
+            {
+                case Language.English:
+                    cursedWords.AddRange(WordList.English.SplitBySpace());
+                    break;
+                case Language.Italian:
+                    cursedWords.AddRange(WordList.Italian.SplitBySpace());
+                    break;
+                case Language.Spanish:
+                    cursedWords.AddRange(WordList.Spanish.SplitBySpace());
+                    break;
+                case Language.French:
+                    cursedWords.AddRange(WordList.French.SplitBySpace());
+                    break;
+                case Language.German:
+                    cursedWords.AddRange(WordList.French.SplitBySpace());
+                    break;
+                default:
+                    break;
+            }
 
             return cursedWords;
         }

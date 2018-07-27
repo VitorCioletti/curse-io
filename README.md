@@ -16,6 +16,8 @@ Package to cleanse strings from curse words
 [nuget]:     https://www.nuget.org/packages/FluentScheduler
 [nuget-img]: https://badge.fury.io/nu/fluentscheduler.svg
 
+[CurseWordRepository]: https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words
+
 * [Basic usage](#basic-usage)
 * [Setting a language dictionary](#setting-a-language-dictionary)
 * [Get all cleansed bad words](#get-all-cleansed-bad-words)
@@ -115,8 +117,14 @@ curse.RemoveWord("idiot");
 ```
 
 ## Supported languages
+
+The word lists were got from [this repository][CurseWordRepository].
+
 - English
-- Portuguese (BR)
+- French
+- Spanish
+- German
+- Italian
 
 
 <p align="center">

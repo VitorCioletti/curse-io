@@ -64,7 +64,6 @@ namespace CurseIO.Data {
         ///   Looks up a localized string similar to 4r5e
         ///5h1t
         ///5hit
-        ///shit
         ///sh1t
         ///a55
         ///anal
@@ -86,7 +85,6 @@ namespace CurseIO.Data {
         ///b17ch
         ///b1tch
         ///ballbag
-        ///balls
         ///ballsack
         ///bastard
         ///beastial
@@ -117,7 +115,6 @@ namespace CurseIO.Data {
         ///booooobs
         ///booooooobs
         ///breasts
-        ///buceta
         ///bugger
         ///bum
         ///bunny fucker
@@ -130,11 +127,277 @@ namespace CurseIO.Data {
         ///carpet muncher
         ///cawk
         ///chink
-        /// [rest of string was truncated]&quot;;.
+        ///cipa
+        ///cl1t
+        ///clit
+        ///cli [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string English {
             get {
                 return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to baiser
+        ///bander
+        ///bigornette
+        ///bite
+        ///bitte
+        ///bloblos
+        ///bordel
+        ///bosser
+        ///bourré
+        ///bourrée
+        ///brackmard
+        ///branlage
+        ///branler
+        ///branlette
+        ///branleur
+        ///branleuse
+        ///brouter le cresson
+        ///caca
+        ///cailler
+        ///chatte
+        ///chiasse
+        ///chier
+        ///chiottes
+        ///clito
+        ///clitoris
+        ///con
+        ///connard
+        ///connasse
+        ///conne
+        ///couilles
+        ///cramouille
+        ///cul
+        ///déconne
+        ///déconner
+        ///drague
+        ///emmerdant
+        ///emmerder
+        ///emmerdeur
+        ///emmerdeuse
+        ///enculé
+        ///enculée
+        ///enculeur
+        ///enculeurs
+        ///enfoiré
+        ///enfoirée
+        ///étron
+        ///fille de pute
+        ///fils de pute
+        ///folle
+        ///foutre
+        ///gerbe
+        ///gerber
+        ///gouine
+        ///grande folle
+        ///grognia [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string French {
+            get {
+                return ResourceManager.GetString("French", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to analritter
+        ///arsch
+        ///arschficker
+        ///arschlecker
+        ///arschloch
+        ///bimbo
+        ///bratze
+        ///bumsen
+        ///bonze
+        ///dödel
+        ///fick
+        ///ficken
+        ///flittchen
+        ///fotze
+        ///fratze
+        ///hackfresse
+        ///hure
+        ///hurensohn
+        ///ische
+        ///kackbratze
+        ///kacke
+        ///kacken
+        ///kackwurst
+        ///kampflesbe
+        ///kanake
+        ///kimme
+        ///lümmel
+        ///MILF
+        ///möpse
+        ///morgenlatte
+        ///möse
+        ///mufti
+        ///muschi
+        ///nackt
+        ///neger
+        ///nigger
+        ///nippel
+        ///nutte
+        ///onanieren
+        ///orgasmus
+        ///pimmel
+        ///pimpern
+        ///pinkeln
+        ///pissen
+        ///pisser
+        ///popel
+        ///poppen
+        ///porno
+        ///reudig
+        ///rosette
+        ///schabracke
+        ///schlampe
+        ///scheiße
+        ///scheisser
+        ///schiesser
+        ///schnackeln
+        ///schwanzlutscher
+        ///schwuchtel
+        ///tittchen
+        ///titten
+        ///vögeln
+        ///vollpfosten
+        ///wichse
+        ///wichse [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string German {
+            get {
+                return ResourceManager.GetString("German", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to allupato
+        ///ammucchiata
+        ///anale
+        ///arrapato
+        ///arrusa
+        ///arruso
+        ///assatanato
+        ///bagascia
+        ///bagassa
+        ///bagnarsi
+        ///baldracca
+        ///balle
+        ///battere
+        ///battona
+        ///belino
+        ///biga
+        ///bocchinara
+        ///bocchino
+        ///bofilo
+        ///boiata
+        ///bordello
+        ///brinca
+        ///bucaiolo
+        ///budiùlo
+        ///buona donna
+        ///busone
+        ///cacca
+        ///caccati in mano e prenditi a schiaffi
+        ///caciocappella
+        ///cadavere
+        ///cagare
+        ///cagata
+        ///cagna
+        ///cammello
+        ///cappella
+        ///carciofo
+        ///carità
+        ///casci
+        ///cazzata
+        ///cazzimma
+        ///cazzo
+        ///checca
+        ///chiappa
+        ///chiavare
+        ///chiavata
+        ///ciospo
+        ///ciucciami il cazzo
+        ///coglione
+        ///coglioni
+        ///cornuto
+        ///cozza
+        ///culattina
+        ///culattone
+        ///culo
+        ///di merda
+        ///ditalino
+        ///duro
+        ///fare u [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Italian {
+            get {
+                return ResourceManager.GetString("Italian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to asno
+        ///bastardo
+        ///Bollera
+        ///Cabron
+        ///Cabrón
+        ///Chupada
+        ///Chupapollas
+        ///Chupetón
+        ///concha
+        ///Concha de tu madre
+        ///Coño
+        ///Coprofagía
+        ///Culo
+        ///Drogas
+        ///Follador
+        ///Follar
+        ///Gilipichis
+        ///Gilipollas
+        ///Hacer una paja
+        ///Haciendo el amor
+        ///Heroína
+        ///Hija de puta
+        ///Hijaputa
+        ///Hijo de puta
+        ///Hijoputa
+        ///Idiota
+        ///Imbécil
+        ///infierno
+        ///Jilipollas
+        ///Kapullo
+        ///Lameculos
+        ///Maciza
+        ///Macizorra
+        ///maldito
+        ///Mamada
+        ///Marica
+        ///Maricón
+        ///Mariconazo
+        ///martillo
+        ///Mierda
+        ///Nazi
+        ///Orina
+        ///Pedo
+        ///Pervertido
+        ///Pezón
+        ///Pinche
+        ///Pis
+        ///Prostituta
+        ///Puta
+        ///Racista
+        ///Ramera
+        ///Sádico
+        ///Semen
+        ///Sex [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Spanish {
+            get {
+                return ResourceManager.GetString("Spanish", resourceCulture);
             }
         }
     }
