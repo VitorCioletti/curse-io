@@ -83,21 +83,6 @@
         }
 
         [TestMethod]
-        public void PortugueseDictionaryWithNoEmptyLines()
-        {
-            // Arrange
-            var curse = new Curse();
-
-            curse.SetLanguage(Language.PortugueseBR);
-
-            // Act
-            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
-
-            // Assert
-            Assert.IsFalse(hasEmpty);
-        }
-
-        [TestMethod]
         public void EnglishDictionaryWithNoEmptyLines()
         {
             // Arrange
