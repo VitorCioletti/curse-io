@@ -35,6 +35,7 @@
             return cursedWords;
         }
 
-        private static IEnumerable<string> SplitBySpace(this string words) => words.Split('\n');
+        private static IEnumerable<string> SplitBySpace(this string words) =>
+			words.Replace("\r", string.Empty).Split('\n');
     }
 }
