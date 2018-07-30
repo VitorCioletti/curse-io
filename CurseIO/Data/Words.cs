@@ -9,30 +9,30 @@
 
         private static IEnumerable<string> FilterWordsByLanguage(Language language)
         {
-            var cursedWords = new List<string>();
+            var curseWords = new List<string>();
 
             switch (language)
             {
                 case Language.English:
-                    cursedWords.AddRange(WordList.English.SplitBySpace());
+                    curseWords.AddRange(WordList.English.SplitBySpace());
                     break;
                 case Language.Italian:
-                    cursedWords.AddRange(WordList.Italian.SplitBySpace());
+                    curseWords.AddRange(WordList.Italian.SplitBySpace());
                     break;
                 case Language.Spanish:
-                    cursedWords.AddRange(WordList.Spanish.SplitBySpace());
+                    curseWords.AddRange(WordList.Spanish.SplitBySpace());
                     break;
                 case Language.French:
-                    cursedWords.AddRange(WordList.French.SplitBySpace());
+                    curseWords.AddRange(WordList.French.SplitBySpace());
                     break;
                 case Language.German:
-                    cursedWords.AddRange(WordList.German.SplitBySpace());
+                    curseWords.AddRange(WordList.German.SplitBySpace());
                     break;
                 default:
                     break;
             }
 
-            return cursedWords;
+            return curseWords;
         }
 
         private static IEnumerable<string> SplitBySpace(this string words) =>

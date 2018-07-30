@@ -10,7 +10,7 @@
     public class CurseTest
     {
         [TestMethod]
-        public void ShouldClearTextFromCursed()
+        public void ShouldCleanseTextFromCursed()
         {
             // Arrange
             var textToBeCleaned = "The quick brown fox jumps over the fuck dog";
@@ -18,23 +18,23 @@
             var curse = new Curse();
 
             // Act
-            var cleaned = curse.Clear(textToBeCleaned);
+            var cleaned = curse.Cleanse(textToBeCleaned);
 
             // Assert
             Assert.AreEqual(resultedText, cleaned);
         }
         [TestMethod]
-        public void ShouldNotClearTextFromCursed()
+        public void ShouldNotCleanseTextFromCursed()
         {
             // Arrange
             var textToBeCleaned = "The quick brown fox jumps over thefuck dog";
             var curse = new Curse();
 
             // Act
-            var cleaned = curse.Clear(textToBeCleaned);
+            var cleansed = curse.Cleanse(textToBeCleaned);
 
             // Assert
-            Assert.AreEqual(textToBeCleaned, cleaned);
+            Assert.AreEqual(textToBeCleaned, cleansed);
         }
 
 
@@ -44,11 +44,11 @@
             // Arrange
             var curse = new Curse();
 
-            var textToBeCleaned = "The fuck brown fox jumps over the fuck dog";
+            var textToBeCleansed = "The fuck brown fox jumps over the fuck dog";
             IDictionary<string, int> cleanedWords;
 
             // Act
-            curse.Clear(textToBeCleaned, out cleanedWords);
+            curse.Cleanse(textToBeCleansed, out cleanedWords);
 
             // Assert
             Assert.AreEqual(2, cleanedWords["fuck"]);

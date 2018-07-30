@@ -20,6 +20,7 @@ Package to cleanse strings from curse words
 
 * [Basic usage](#basic-usage)
 * [Setting a language dictionary](#setting-a-language-dictionary)
+* [Getting the current language](#getting-the-current-language)
 * [Get all cleansed bad words](#get-all-cleansed-bad-words)
 * [Asynchronous cleaning](#asynchronous-cleaning)
 * [Adding words to current dictionary](#adding-words-to-current-dictionary)
@@ -37,13 +38,13 @@ var text = "The quick brown fox jumps over the idiot dog";
 var curse = new Curse();
 
 // The quick brown fox jumps over the ***** dog;
-var cleanedText = curse.Clear(text);
+var cleanedText = curse.Cleanse(text);
 
 ```
 
 ## Setting a language dictionary
 
-It is possible to set a specific language to clear your string. The default one is `English`
+It is possible to set a specific language to cleanse your string. The default one is `English`
 ```cs
 var curse = new Curse();
 
@@ -51,8 +52,18 @@ curse.SetLanguage(Language.English);
 
 ```
 
+## Getting the current language
+
+It is also possible to get a the current language.
+```cs
+var curse = new Curse();
+
+var language = curse.GetCurrentLanguage();
+
+```
+
 ## Get all cleansed bad words
-`Clean` returns a dictionary where key is the bad word and the value is the amount of times it appeared in the given string.
+`Cleanse(string, IDicionary<string,int>)` returns a dictionary where key is the bad word and the value is the amount of times it appeared in the given string.
 
 ```cs
 var text = "The quick brown fox jumps over the idiot dog";
@@ -60,7 +71,7 @@ var text = "The quick brown fox jumps over the idiot dog";
 var curse = new Curse();
 IDictionary<string, int> replacedWords;
 
-curse.Clean(text, out replacedWords);
+curse.Cleanse(text, out replacedWords);
 
 ```
 
@@ -72,7 +83,7 @@ var text = "The quick brown fox jumps over the idiot dog";
 
 var curse = new Curse();
 
-var cleanedText = await curse.CleanAsync(text);
+var cleanedText = await curse.CleanseAsync(text);
 
 ```
 
@@ -86,7 +97,7 @@ var newCurseWords = new List<string>() {"foo", "bar"};
 curse.AddNewWords(newCurseWords);
 
 // The quick *** fox jumps *** the ***** dog
-var cleanedText = curse.Clean(text);
+var cleanedText = curse.Cleanse(text);
 
 ```
 
@@ -107,7 +118,7 @@ var removeWords = new List<string>() {"foo", "bar", "idiot"};
 curse.RemoveWords(removeWords);
 
 // The quick foo fox jumps bar the idiot dog
-var cleanedText = curse.Clean(text);
+var cleanedText = curse.Cleanse(text);
 
 ```
 
