@@ -29,6 +29,8 @@ Package to cleanse strings from curse words
 
 
 ## Basic Usage
+The package provides some basic curse word list to cleanse strings.
+
 ```cs
 var text = "The quick brown fox jumps over the idiot dog";
 
