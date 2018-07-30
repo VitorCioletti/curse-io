@@ -48,8 +48,14 @@ It is possible to set a specific language to cleanse your string. The default on
 ```cs
 var curse = new Curse();
 
-curse.SetLanguage(Language.English);
+curse.SetLanguage(Language.French);
 
+```
+
+or this
+
+```cs
+var curse = new Curse(Language.French);
 ```
 
 ## Getting the current language
