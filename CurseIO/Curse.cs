@@ -41,6 +41,9 @@
         /// <param name="text">Text to be cleansed</param>
         public string Cleanse(string text)
         {
+            if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
+                return text;
+
             _curseWords.ForEach(curseWord => text = ReplaceCurse(text, curseWord));
 
             return text;
@@ -53,10 +56,15 @@
         /// /// <param name="curseCleansedList">Key: Bad word removed; Value: How many times the word appeared in the given string</param>
         public string Cleanse(string text, out IDictionary<string, int> curseCleansedList)
         {
+            curseCleansedList = new Dictionary<string, int>();
+
+            if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
+                return text;
+
             _curseRemoved.Clear();
 
             var cleanedText = Cleanse(text);
-            curseCleansedList = new Dictionary<string, int>(_curseRemoved);
+            curseCleansedList = _curseRemoved;
 
             return cleanedText;
         }
