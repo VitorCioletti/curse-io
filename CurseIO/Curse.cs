@@ -23,7 +23,6 @@
             _curseRemoved = new Dictionary<string, int>();
         }
 
-
         /// <summary>
         /// Creates a new Curse object and sets its current language
         /// </summary>

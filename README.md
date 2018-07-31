@@ -33,11 +33,11 @@ Package to cleanse strings from curse words
 The package provides some basic curse word list to cleanse strings.
 
 ```cs
-var text = "The quick brown fox jumps over the idiot dog";
+var text = "The quick brown fox jumps over the foo dog";
 
 var curse = new Curse();
 
-// The quick brown fox jumps over the ***** dog;
+// The quick brown fox jumps over the *** dog;
 var cleanedText = curse.Cleanse(text);
 
 ```
@@ -72,7 +72,7 @@ var language = curse.GetCurrentLanguage();
 `Cleanse(string, IDicionary<string,int>)` returns a dictionary where key is the bad word and the value is the amount of times it appeared in the given string.
 
 ```cs
-var text = "The quick brown fox jumps over the idiot dog";
+var text = "The quick brown fox jumps over the foo dog";
 
 var curse = new Curse();
 IDictionary<string, int> replacedWords;
@@ -85,7 +85,7 @@ curse.Cleanse(text, out replacedWords);
 
 
 ```cs
-var text = "The quick brown fox jumps over the idiot dog";
+var text = "The quick brown fox jumps over the foo dog";
 
 var curse = new Curse();
 
@@ -95,14 +95,14 @@ var cleanedText = await curse.CleanseAsync(text);
 
 ## Adding words to current dictionary
 ```cs
-var text = "The quick foo fox jumps bar the idiot dog";
+var text = "The quick foo fox jumps bar the bar dog";
 
 var curse = new Curse();
 
 var newCurseWords = new List<string>() {"foo", "bar"};
 curse.AddNewWords(newCurseWords);
 
-// The quick *** fox jumps *** the ***** dog
+// The quick *** fox jumps *** the *** dog
 var cleanedText = curse.Cleanse(text);
 
 ```
@@ -116,14 +116,14 @@ curse.AddNewWord("Foo");
 
 ## Removing words from current dictionary
 ```cs
-var text = "The quick foo fox jumps bar the idiot dog";
+var text = "The quick foo fox jumps the bar dog";
 
 var curse = new Curse();
 
-var removeWords = new List<string>() {"foo", "bar", "idiot"};
+var removeWords = new List<string>() {"foo", "bar"};
 curse.RemoveWords(removeWords);
 
-// The quick foo fox jumps bar the idiot dog
+// The quick foo fox jumps the bar dog
 var cleanedText = curse.Cleanse(text);
 
 ```
