@@ -76,6 +76,12 @@
         public Task<string> CleanseAsync(string text) => Task.Run(() => Cleanse(text));
 
         /// <summary>
+        /// Set the current curse char
+        /// </summary>
+        /// <param name="new">The new curse char</param>
+        public char SetCurseChar(char newChar) => _curseChar = newChar;
+
+        /// <summary>
         /// Set the current language
         /// </summary>
         /// <param name="language">The desired language to be set</param>

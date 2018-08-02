@@ -83,12 +83,89 @@
         }
 
         [TestMethod]
-        public void EnglishDictionaryWithNoEmptyLines()
+        public void ShouldRemoveWordsFromDictionary()
+        {
+            // Arrange
+            var curse = new Curse();
+            var words = new List<string>() { "fuck", "wanky" };
+
+            // Act
+            curse.RemoveWords(words);
+            var notRemoved = curse.GetCurrentDictionary().Any(e => words.Contains(e));
+
+            // Assert
+            Assert.IsFalse(notRemoved);
+        }
+
+        [TestMethod]
+        public void ShouldAddNewCurseChar()
+        {
+            // Arrange
+            var textToBeCleansed = "The fuck brown fox jumps over the fuck dog";
+            var expectedText = "The ???? brown fox jumps over the ???? dog";
+
+            var curse = new Curse();
+
+            // Act
+            curse.SetCurseChar('?');
+            var cleansed = curse.Cleanse(textToBeCleansed);
+
+            // Assert
+            Assert.AreEqual(expectedText, cleansed);
+        }
+
+        [TestMethod]
+        public void FrenchDictionaryWithNoEmptyLines()
         {
             // Arrange
             var curse = new Curse();
 
-            curse.SetLanguage(Language.English);
+            curse.SetLanguage(Language.French);
+
+            // Act
+            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
+
+            // Assert
+            Assert.IsFalse(hasEmpty);
+        }
+
+        [TestMethod]
+        public void ItalianDictionaryWithNoEmptyLines()
+        {
+            // Arrange
+            var curse = new Curse();
+
+            curse.SetLanguage(Language.Italian);
+
+            // Act
+            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
+
+            // Assert
+            Assert.IsFalse(hasEmpty);
+        }
+
+        [TestMethod]
+        public void GermanDictionaryWithNoEmptyLines()
+        {
+            // Arrange
+            var curse = new Curse();
+
+            curse.SetLanguage(Language.German);
+
+            // Act
+            var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
+
+            // Assert
+            Assert.IsFalse(hasEmpty);
+        }
+
+        [TestMethod]
+        public void SpanishDictionaryWithNoEmptyLines()
+        {
+            // Arrange
+            var curse = new Curse();
+
+            curse.SetLanguage(Language.Spanish);
 
             // Act
             var hasEmpty = curse.GetCurrentDictionary().Contains(string.Empty);
