@@ -27,6 +27,7 @@ Install in Nuget CLI:
 * [Getting the current language](#getting-the-current-language)
 * [Get all cleansed bad words](#get-all-cleansed-bad-words)
 * [Asynchronous cleaning](#asynchronous-cleaning)
+* [Setting new curse char](#setting-new-curse-char) 
 * [Adding words to current dictionary](#adding-words-to-current-dictionary)
 * [Removing words from current dictionary](#removing-words-to-current-dictionary)
 * [Supported languages](#supported-languages)
@@ -42,7 +43,7 @@ var text = "The quick brown fox jumps over the foo dog";
 var curse = new Curse();
 
 // The quick brown fox jumps over the *** dog;
-var cleanedText = curse.Cleanse(text);
+var cleansedText = curse.Cleanse(text);
 
 ```
 
@@ -85,7 +86,7 @@ curse.Cleanse(text, out replacedWords);
 
 ```
 
-## Asynchronous cleaning
+## Asynchronous cleansing
 
 
 ```cs
@@ -93,9 +94,25 @@ var text = "The quick brown fox jumps over the foo dog";
 
 var curse = new Curse();
 
-var cleanedText = await curse.CleanseAsync(text);
+var cleansedText = await curse.CleanseAsync(text);
 
 ```
+
+## Setting new curse char
+You can add a new curse char to replace the default one: `*`
+
+```cs
+var text = "The quick brown fox jumps over the foo dog";
+
+var curse = new Curse();
+
+curse.SetCurseChar('?');
+
+// The quick brown fox jumps over the ??? dog;
+var cleansedText = curse.Cleanse(text);
+
+```
+
 
 ## Adding words to current dictionary
 ```cs
@@ -107,7 +124,7 @@ var newCurseWords = new List<string>() {"foo", "bar"};
 curse.AddNewWords(newCurseWords);
 
 // The quick *** fox jumps *** the *** dog
-var cleanedText = curse.Cleanse(text);
+var cleansedText = curse.Cleanse(text);
 
 ```
 
@@ -128,7 +145,7 @@ var removeWords = new List<string>() {"foo", "bar"};
 curse.RemoveWords(removeWords);
 
 // The quick foo fox jumps the bar dog
-var cleanedText = curse.Cleanse(text);
+var cleansedText = curse.Cleanse(text);
 
 ```
 
