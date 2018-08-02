@@ -17,8 +17,8 @@ Install in Nuget CLI:
 
 [build]:     https://ci.appveyor.com/project/VitorCioletti/curse-io
 [build-img]: https://ci.appveyor.com/api/projects/status/nv34gc8sm0ds2cxj?svg=true
-[nuget]:     https://www.nuget.org/packages/FluentScheduler
-[nuget-img]: https://badge.fury.io/nu/fluentscheduler.svg
+[nuget]:     https://www.nuget.org/packages/Curse-IO/
+[nuget-img]: https://badge.fury.io/nu/curse-io.svg
 
 [CurseWordRepository]: https://github.com/LDNOOBW/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words
 
