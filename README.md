@@ -11,6 +11,10 @@
 
 Package to cleanse strings from curse words
 
+Install in Nuget CLI:
+`Install-Package Curse-IO -Version 1.0.0`
+
+
 [build]:     https://ci.appveyor.com/project/VitorCioletti/curse-io
 [build-img]: https://ci.appveyor.com/api/projects/status/nv34gc8sm0ds2cxj?svg=true
 [nuget]:     https://www.nuget.org/packages/FluentScheduler
