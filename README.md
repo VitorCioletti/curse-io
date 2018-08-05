@@ -153,7 +153,7 @@ You can also remove only one word.
 ```cs
 var curse = new Curse();
 
-curse.RemoveWord("idiot");
+curse.RemoveWord("foo");
 ```
 
 ## Supported languages
