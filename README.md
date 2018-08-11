@@ -9,7 +9,7 @@
 [![][build-img]][build]
 [![][nuget-img]][nuget]
 
-Package to cleanse strings from curse words
+Simple .NET package to cleanse strings from curse words
 
 Install in Nuget CLI:
 `Install-Package Curse-IO -Version 1.0.0`
