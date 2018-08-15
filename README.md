@@ -11,9 +11,7 @@
 
 Simple .NET package to cleanse strings from curse words
 
-Install in Nuget CLI:
-`Install-Package Curse-IO -Version 1.0.0`
-
+Package manager: `Install-Package Curse-IO`
 
 [build]:     https://ci.appveyor.com/project/VitorCioletti/curse-io
 [build-img]: https://ci.appveyor.com/api/projects/status/nv34gc8sm0ds2cxj?svg=true
