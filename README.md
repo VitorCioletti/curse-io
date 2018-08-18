@@ -9,7 +9,7 @@
 [![][build-img]][build]
 [![][nuget-img]][nuget]
 
-Simple .NET package to cleanse strings from curse words
+Simple .NET and .NET Core package to cleanse strings from curse words
 
 Package manager: `Install-Package Curse-IO`
 
