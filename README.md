@@ -6,12 +6,11 @@
 
 # Curse-IO
 
+Simple .NET and .NET Core package to cleanse strings from curse words
+
 [![][build-img]][build]
 [![][nuget-img]][nuget]
 
-Simple .NET and .NET Core package to cleanse strings from curse words
-
-Package manager: `Install-Package Curse-IO`
 
 [build]:     https://ci.appveyor.com/project/VitorCioletti/curse-io
 [build-img]: https://ci.appveyor.com/api/projects/status/nv34gc8sm0ds2cxj?svg=true
