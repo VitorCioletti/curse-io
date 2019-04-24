@@ -73,7 +73,13 @@
         /// Cleanse the given string, replacing its bad words to '*' character
         /// </summary>
         /// <param name="text">Text to be cleansed</param>
-        public Task<string> CleanseAsync(string text) => Task.Run(() => Cleanse(text));
+        public async Task<string> CleanseAsync(string text, Action<Exception> errorCallback = null)
+        {
+            await Task.Run(Cleanse(text)).ContinueWith(
+                e => errorCallback?.Invoke(e),
+                TaskContinuationOptions.OnlyOnFaulted
+            );
+        }
 
         /// <summary>
         /// Set the current curse char
