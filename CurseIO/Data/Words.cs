@@ -14,19 +14,19 @@
             switch (language)
             {
                 case Language.English:
-                    curseWords.AddRange(WordList.English.SplitBySpace());
+                    curseWords.AddRange(WordList.English);
                     break;
                 case Language.Italian:
-                    curseWords.AddRange(WordList.Italian.SplitBySpace());
+                    curseWords.AddRange(WordList.Italian);
                     break;
                 case Language.Spanish:
-                    curseWords.AddRange(WordList.Spanish.SplitBySpace());
+                    curseWords.AddRange(WordList.Spanish);
                     break;
                 case Language.French:
-                    curseWords.AddRange(WordList.French.SplitBySpace());
+                    curseWords.AddRange(WordList.French);
                     break;
                 case Language.German:
-                    curseWords.AddRange(WordList.German.SplitBySpace());
+                    curseWords.AddRange(WordList.German);
                     break;
                 default:
                     break;
@@ -34,8 +34,5 @@
 
             return curseWords;
         }
-
-        private static IEnumerable<string> SplitBySpace(this string words) =>
-			words.Replace("\r", string.Empty).Split('\n');
     }
 }

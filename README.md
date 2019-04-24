@@ -24,7 +24,7 @@ Simple .NET and .NET Core package to cleanse strings from curse words
 * [Getting the current language](#getting-the-current-language)
 * [Get all cleansed bad words](#get-all-cleansed-bad-words)
 * [Asynchronous cleaning](#asynchronous-cleaning)
-* [Setting new curse char](#setting-new-curse-char) 
+* [Setting new curse char](#setting-new-curse-char)
 * [Adding words to current dictionary](#adding-words-to-current-dictionary)
 * [Removing words from current dictionary](#removing-words-to-current-dictionary)
 * [Supported languages](#supported-languages)

@@ -1,10 +1,12 @@
 ﻿namespace Tests
 {
-    using CurseIO;
     using CurseIO.Enum;
+    using CurseIO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
     using System.Linq;
+
+    #pragma warning disable 1591
 
     [TestClass]
     public class CurseTest

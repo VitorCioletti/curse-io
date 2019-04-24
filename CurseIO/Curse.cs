@@ -6,7 +6,11 @@
     using System.Linq;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
+    using System;
 
+    /// <summary>
+    /// Class to cleanse strings from bad words.
+    /// </summary>
     public class Curse
     {
         private Language _language = Language.English;
@@ -17,6 +21,9 @@
 
         private char _curseChar = '*';
 
+        /// <summary>
+        /// Creates a new instance of Curse class.
+        /// </summary>
         public Curse()
         {
             SetCurseWords();
@@ -24,9 +31,9 @@
         }
 
         /// <summary>
-        /// Creates a new Curse object and sets its current language
+        /// Creates a new instance of Curse class.
         /// </summary>
-        /// <param name="language">Language of the curse word dictionary</param>
+        /// <param name="language">Language of the curse word dictionary.</param>
         public Curse(Language language)
         {
             SetCurseWords();
@@ -36,24 +43,25 @@
         }
 
         /// <summary>
-        /// Cleanse the given string, replacing its bad words to '*' character
+        /// Cleanse the given string, replacing its bad words to '*' character.
         /// </summary>
-        /// <param name="text">Text to be cleansed</param>
+        /// <param name="text">Text to be cleansed.</param>
         public string Cleanse(string text)
         {
             if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                 return text;
 
-            _curseWords.ForEach(curseWord => text = ReplaceCurse(text, curseWord));
+            foreach (var curseWord in _curseWords)
+                text = ReplaceCurse(text, curseWord);
 
             return text;
         }
 
         /// <summary>
-        /// Cleanse the given string, replacing its bad words to '*' character
+        /// Cleanse the given string, replacing its bad words to '*' character.
         /// </summary>
-        /// <param name="text">Text to be cleansed</param>
-        /// /// <param name="curseCleansedList">Key: Bad word removed; Value: How many times the word appeared in the given string</param>
+        /// <param name="text">Text to be cleansed.</param>
+        /// /// <param name="curseCleansedList">Key: Bad word removed; Value: How many times the word appeared in the given string.</param>
         public string Cleanse(string text, out IDictionary<string, int> curseCleansedList)
         {
             curseCleansedList = new Dictionary<string, int>();
@@ -70,27 +78,33 @@
         }
 
         /// <summary>
-        /// Cleanse the given string, replacing its bad words to '*' character
+        /// Cleanse the given string, replacing its bad words to '*' character.
         /// </summary>
-        /// <param name="text">Text to be cleansed</param>
+        /// <param name="text">Text to be cleansed.</param>
+        /// <param name="errorCallback">Callback to execute in case of failure.</param>
         public async Task<string> CleanseAsync(string text, Action<Exception> errorCallback = null)
         {
-            await Task.Run(Cleanse(text)).ContinueWith(
-                e => errorCallback?.Invoke(e),
+            return await Task.Run(() => Cleanse(text)).ContinueWith<string>(
+                e => 
+                {
+                    errorCallback?.Invoke(e.Exception);
+
+                    return null;
+                },
                 TaskContinuationOptions.OnlyOnFaulted
             );
         }
 
         /// <summary>
-        /// Set the current curse char
+        /// Set the current curse char.
         /// </summary>
-        /// <param name="new">The new curse char</param>
+        /// <param name="newChar">The new curse char.</param>
         public char SetCurseChar(char newChar) => _curseChar = newChar;
 
         /// <summary>
-        /// Set the current language
+        /// Set the current language.
         /// </summary>
-        /// <param name="language">The desired language to be set</param>
+        /// <param name="language">The desired language to be set.</param>
         public Language SetLanguage(Language language)
         {
             _language = language;
@@ -101,26 +115,26 @@
         }
 
         /// <summary>
-        /// Gets the current language
+        /// Gets the current language.
         /// </summary>
         public Language GetCurrentLanguage() => _language;
 
         /// <summary>
-        /// Gets the current curse word dictionary
+        /// Gets the current curse word dictionary.
         /// </summary>
         public IEnumerable<string> GetCurrentDictionary() => _curseWords;
 
         /// <summary>
-        /// Add words to the current curse word dictionary
+        /// Add words to the current curse word dictionary.
         /// </summary>
-        /// <param name="newWords">New words to be added</param>
+        /// <param name="newWords">New words to be added.</param>
         public IEnumerable<string> AddNewWords(IEnumerable<string> newWords) => 
             newWords.Select(word => AddNewWord(word)).ToList();
 
         /// <summary>
-        /// Add a single word to the current curse word dictionary
+        /// Add a single word to the current curse word dictionary.
         /// </summary>
-        /// <param name="newWord">Word to be added</param>
+        /// <param name="newWord">Word to be added.</param>
         public string AddNewWord(string newWord)
         {
             _curseWords.Add(newWord);
@@ -129,20 +143,21 @@
         }
 
         /// <summary>
-        /// Remove words to the current curse word dictionary
+        /// Remove words to the current curse word dictionary.
         /// </summary>
-        /// <param name="wordsToRemove">Words to be removed</param>
+        /// <param name="wordsToRemove">Words to be removed.</param>
         public IEnumerable<string> RemoveWords(IEnumerable<string> wordsToRemove)
         {
-            wordsToRemove.ToList().ForEach(word => RemoveWord(word));
+            foreach (var word in wordsToRemove)
+                RemoveWord(word);
 
             return wordsToRemove;
         }
 
         /// <summary>
-        /// Remove a single word to the current curse word dictionary
+        /// Remove a single word to the current curse word dictionary.
         /// </summary>
-        /// <param name="wordsToRemove">Word to be removed</param>
+        /// <param name="wordToRemove">Word to be removed.</param>
         public string RemoveWord(string wordToRemove)
         {
             _curseWords.Remove(wordToRemove);
@@ -160,7 +175,12 @@
             if (curseCounter >= 1)
                 _curseRemoved.Add(curseWord, curseCounter);
 
-            return Regex.Replace(text, patternToMatch, new string(_curseChar, curseWord.Count()), RegexOptions.IgnoreCase);
+            return Regex.Replace(
+                text, 
+                patternToMatch, 
+                new string(_curseChar, curseWord.Length),
+                RegexOptions.IgnoreCase
+            );
         }
     }
 }

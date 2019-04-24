@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Curse-IO</id>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <authors>Vitor Cioletti</authors>
     <owners>Vitor Cioletti</owners>
     <licenseUrl>http://creativecommons.org/licenses/by/4.0/</licenseUrl>
@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Package to cleanse strings from curse words</description>
     <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2018</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags>Package to cleanse strings from curse words</tags>
   </metadata>
 </package>
